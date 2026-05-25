@@ -159,4 +159,9 @@ xcuserdata/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+### AI Tooling ###
+AGENTS.md
+.github/*
+.vscode/*
+
 # End of https://www.toptal.com/developers/gitignore/api/android,flutter,darteditor,xcode,macos

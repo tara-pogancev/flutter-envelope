@@ -6,7 +6,7 @@ class AppBoxDecorations {
   late BuildContext context;
 
   BoxDecoration get whiteRoundedCorners => BoxDecoration(
-    color: context.colors.surfaceContainerLowest,
+    color: context.colors.surface,
     borderRadius: Sizes.l.borderRadius,
   );
 
