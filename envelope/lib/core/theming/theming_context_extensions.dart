@@ -12,4 +12,5 @@ extension ThemingContextExtensions on BuildContext {
 
 extension TextStyleX on TextStyle {
   TextStyle withColor(Color color) => copyWith(color: color);
+  TextStyle bold() => copyWith(fontWeight: FontWeight.w600);
 }

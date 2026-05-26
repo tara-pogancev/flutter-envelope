@@ -22,12 +22,12 @@ class $AssetsImagesGen {
   AssetGenImage get grayGradient =>
       const AssetGenImage('assets/images/gray_gradient.png');
 
-  /// File path: assets/images/profile_image_placeholder.zip
-  String get profileImagePlaceholder =>
-      'assets/images/profile_image_placeholder.zip';
+  /// File path: assets/images/profile_image_placeholder.png
+  AssetGenImage get profileImagePlaceholder =>
+      const AssetGenImage('assets/images/profile_image_placeholder.png');
 
   /// List of all assets
-  List<dynamic> get values => [
+  List<AssetGenImage> get values => [
     gradientColored,
     grayGradient,
     profileImagePlaceholder,

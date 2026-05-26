@@ -1,6 +1,10 @@
 import 'package:envelope/core/theming/sizes.dart';
 import 'package:envelope/core/theming/theming_context_extensions.dart';
 import 'package:envelope/core/widgets/grainy_page_container.dart';
+import 'package:envelope/core/widgets/home_info_card.dart';
+import 'package:envelope/features/home/widgets/daily_streak_card.dart';
+import 'package:envelope/features/home/widgets/home_daily_question_prompt.dart';
+import 'package:envelope/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_m3shapes/flutter_m3shapes.dart';
 import 'package:material_symbols_icons/symbols.dart';
@@ -20,6 +24,7 @@ class HomePage extends StatelessWidget {
           padding: Sizes.l.padding,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             spacing: Sizes.xs.value,
             children: [
               _HomeHeader(),
@@ -36,13 +41,14 @@ class HomePage extends StatelessWidget {
                 icon: Icon(Symbols.add),
                 style: context.buttonStyles.largeDarkGray,
               ),
-              _HomeDailyPrompt(),
-              Sizes.m.spacer,
+              HomeDailyPrompt(),
+              Sizes.l.spacer,
               Text(
                 "Daily streak",
-                style: context.typography.h5,
+                style: context.typography.h4,
                 textAlign: TextAlign.start,
               ),
+              Sizes.s.spacer,
               SizedBox(
                 height: 60,
                 child: ListView.separated(
@@ -53,9 +59,40 @@ class HomePage extends StatelessWidget {
                     final today = DateTime.now();
                     final date = today.subtract(Duration(days: 29 - index));
                     final isChecked = index == 29 ? true : index % 3 != 0;
-                    return _DaliyStreakCard(date: date, isChecked: isChecked);
+                    return DaliyStreakCard(date: date, isChecked: isChecked);
                   },
                 ),
+              ),
+              Sizes.l.spacer,
+              Text(
+                "Why journal?",
+                style: context.typography.h4,
+                textAlign: TextAlign.start,
+              ),
+              Sizes.s.spacer,
+              HomeInfoCard(
+                title: "Mental health",
+                subtitle: "Journaling can help you manage stress and anxiety.",
+                icon: Symbols.mood,
+                shape: Shapes.flower,
+              ),
+              HomeInfoCard(
+                title: "Self-reflection",
+                subtitle:
+                    "Journaling can help you reflect on your thoughts and feelings.",
+                icon: Symbols.self_improvement,
+                shape: Shapes.slanted,
+                shapeColor: context.colors.secondary,
+                iconColor: context.colors.onSecondary,
+              ),
+              HomeInfoCard(
+                title: "Creativity",
+                subtitle:
+                    "Journaling can help you boost your creativity and problem-solving skills.",
+                icon: Symbols.light_mode,
+                shape: Shapes.c6_sided_cookie,
+                shapeColor: context.colors.tertiary,
+                iconColor: context.colors.onTertiary,
               ),
             ],
           ),
@@ -90,94 +127,12 @@ class _HomeHeader extends StatelessWidget {
         ),
 
         Spacer(),
-        CircleAvatar(),
+        CircleAvatar(
+          foregroundImage: AssetImage(
+            Assets.images.profileImagePlaceholder.path,
+          ),
+        ),
       ],
-    );
-  }
-}
-
-class _HomeDailyPrompt extends StatelessWidget {
-  const _HomeDailyPrompt();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: context.boxDecorations.whiteRoundedCorners,
-      padding: Sizes.l.padding,
-      child: Column(
-        spacing: Sizes.l.value,
-        children: [
-          Text(
-            "Daily prompt".toUpperCase(),
-            style: context.typography.bodySmall.withColor(
-              context.colors.onSurfaceVariant,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            "What fun conversation did you have today?",
-            style: context.typography.h3,
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            width: 230,
-            child: FilledButton.icon(
-              onPressed: () {},
-              icon: Icon(Symbols.edit),
-              label: Text("Answer"),
-              style: context.buttonStyles.mediumGhost,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _DaliyStreakCard extends StatelessWidget {
-  const _DaliyStreakCard({required this.date, required this.isChecked});
-
-  final DateTime date;
-  final bool isChecked;
-
-  final double _size = 60;
-
-  static const _weekdays = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
-  String _weekdayLabel(DateTime date) => _weekdays[date.weekday - 1];
-
-  @override
-  Widget build(BuildContext context) {
-    return M3Container.arch(
-      color: isChecked ? context.colors.tertiary : context.colors.surface,
-      width: _size,
-      height: _size,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            date.day.toString(),
-            style: context.typography.bodyLarge
-                .withColor(
-                  isChecked
-                      ? context.colors.onTertiary
-                      : context.colors.onSurface,
-                )
-                .copyWith(height: 1),
-          ),
-          Text(
-            _weekdayLabel(date),
-            style: context.typography.bodyExtraSmall
-                .withColor(
-                  isChecked
-                      ? context.colors.tertiaryContainer
-                      : context.colors.onTertiaryContainer,
-                )
-                .copyWith(height: 1),
-          ),
-        ],
-      ),
     );
   }
 }

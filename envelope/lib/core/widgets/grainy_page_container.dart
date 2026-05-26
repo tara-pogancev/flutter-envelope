@@ -9,6 +9,8 @@ class GrainyPageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final backgroundColor = context.colors.onInverseSurface;
+
     return SizedBox(
       height: double.infinity,
       child: Stack(
@@ -28,8 +30,8 @@ class GrainyPageContainer extends StatelessWidget {
                   begin: AlignmentGeometry.bottomCenter,
                   end: AlignmentGeometry.topCenter,
                   colors: [
-                    context.colors.surfaceContainerHighest,
-                    context.colors.surfaceContainerHighest,
+                    backgroundColor,
+                    backgroundColor,
                     Colors.transparent,
                   ],
                 ),

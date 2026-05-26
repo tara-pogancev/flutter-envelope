@@ -1,6 +1,6 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:envelope/core/theming/app_material_theme.dart';
-import 'package:envelope/features/home/home_page.dart';
+import 'package:envelope/core/widgets/theme_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +15,6 @@ class MainApp extends StatelessWidget {
     return DynamicColorBuilder(
       builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) =>
           MaterialApp(
-            home: HomePage(),
             theme: AppMaterialTheme.getThemeDataFromColorScheme(
               colorScheme: lightDynamic,
               brightness: Brightness.light,
@@ -24,6 +23,7 @@ class MainApp extends StatelessWidget {
               colorScheme: darkDynamic,
               brightness: Brightness.dark,
             ),
+            home: ThemePreview(),
           ),
     );
   }
