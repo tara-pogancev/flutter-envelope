@@ -1,3 +1,4 @@
+import 'package:envelope/core/i18n/strings.g.dart';
 import 'package:envelope/core/theming/theming_context_extensions.dart';
 import 'package:flutter/material.dart';
 
@@ -197,7 +198,7 @@ class ThemePreview extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Theme preview')),
+      appBar: AppBar(title: Text(context.t.themePreview.title)),
       body: SafeArea(
         child: ListView.builder(
           itemCount: pairs.length,

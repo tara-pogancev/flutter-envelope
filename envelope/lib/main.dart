@@ -1,10 +1,11 @@
 import 'package:dynamic_color/dynamic_color.dart';
+import 'package:envelope/core/i18n/strings.g.dart';
 import 'package:envelope/core/theming/app_material_theme.dart';
 import 'package:envelope/features/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(TranslationProvider(child: const MainApp()));
 }
 
 class MainApp extends StatelessWidget {
@@ -15,6 +16,7 @@ class MainApp extends StatelessWidget {
     return DynamicColorBuilder(
       builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) =>
           MaterialApp(
+            debugShowCheckedModeBanner: false,
             theme: AppMaterialTheme.getThemeDataFromColorScheme(
               colorScheme: lightDynamic,
               brightness: Brightness.light,

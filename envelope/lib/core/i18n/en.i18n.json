@@ -1,3 +1,26 @@
 {
-  "appName": "Envelope"
+  "appName": "Envelope",
+  "homePage": {
+    "pageTitle": "Hi, let's write about today. 🖋️",
+    "journalEntry": "Journal entry",
+    "dailyStreak": "Daily streak",
+    "whyJournal": "Why journal?",
+    "rememberingLifeTitle": "Remembering life",
+    "rememberingLifeSubtitle": "Each day has something to be remembered by. Even if only in a sentence, make sure your everyday moments stay remembered.",
+    "selfReflectionTitle": "Self-reflection",
+    "selfReflectionSubtitle": "Putting you thoughts on paper helps you shape the way you think. It highlights your thought patterns, and helps you discover new perspectives.",
+    "creativityTitle": "Creativity",
+    "creativitySubtitle": "Getting into a habit of writing can feel difficult. But the more you write, the easier you will find exploration of new ideas and concepts reaching you. Creativity is a skill to be practiced as well, and journaling is a simple way to get you started."
+  },
+  "homeHeader": {
+    "date": "{date}"
+  },
+  "homeDailyPrompt": {
+    "dailyPrompt": "Daily prompt",
+    "question": "What fun conversation did you have today?",
+    "answer": "Answer"
+  },
+  "themePreview": {
+    "title": "Theme preview"
+  }
 }

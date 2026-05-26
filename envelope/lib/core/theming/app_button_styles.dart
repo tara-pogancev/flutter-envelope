@@ -56,4 +56,22 @@ class AppButtonStyles {
     minimumSize: Size.fromHeight(_mediumHeight),
     textStyle: context.typography.body,
   );
+
+  // SMALL BUTTONS
+
+  ButtonStyle get smallDarkGray => FilledButton.styleFrom(
+    backgroundColor: context.colors.inverseSurface,
+    foregroundColor: context.colors.onInverseSurface,
+    iconSize: _smallIconSize,
+    minimumSize: Size.fromHeight(_smallHeight),
+    textStyle: context.typography.body,
+  );
+
+  ButtonStyle get smallSecondary => FilledButton.styleFrom(
+    backgroundColor: context.colors.secondary,
+    foregroundColor: context.colors.onSecondary,
+    iconSize: _smallIconSize,
+    minimumSize: Size.fromHeight(_smallHeight),
+    textStyle: context.typography.body,
+  );
 }

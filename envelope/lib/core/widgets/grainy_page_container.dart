@@ -17,10 +17,14 @@ class GrainyPageContainer extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Image(
-              image: Assets.images.grayGradient.provider(),
+              image: context.isDarkMode
+                  ? Assets.images.grayGradientDark.provider()
+                  : Assets.images.grayGradient.provider(),
               fit: BoxFit.cover,
               color: context.colors.primary,
-              colorBlendMode: BlendMode.color,
+              colorBlendMode: context.isDarkMode
+                  ? BlendMode.overlay
+                  : BlendMode.color,
             ),
           ),
           Positioned.fill(

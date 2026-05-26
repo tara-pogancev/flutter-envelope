@@ -22,6 +22,10 @@ class $AssetsImagesGen {
   AssetGenImage get grayGradient =>
       const AssetGenImage('assets/images/gray_gradient.png');
 
+  /// File path: assets/images/gray_gradient_dark.png
+  AssetGenImage get grayGradientDark =>
+      const AssetGenImage('assets/images/gray_gradient_dark.png');
+
   /// File path: assets/images/profile_image_placeholder.png
   AssetGenImage get profileImagePlaceholder =>
       const AssetGenImage('assets/images/profile_image_placeholder.png');
@@ -30,6 +34,7 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [
     gradientColored,
     grayGradient,
+    grayGradientDark,
     profileImagePlaceholder,
   ];
 }

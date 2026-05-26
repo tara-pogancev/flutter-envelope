@@ -1,3 +1,4 @@
+import 'package:envelope/core/i18n/strings.g.dart';
 import 'package:envelope/core/theming/sizes.dart';
 import 'package:envelope/core/theming/theming_context_extensions.dart';
 import 'package:flutter/material.dart';
@@ -16,14 +17,14 @@ class HomeDailyPrompt extends StatelessWidget {
         spacing: Sizes.l.value,
         children: [
           Text(
-            "Daily prompt".toUpperCase(),
+            context.t.homeDailyPrompt.dailyPrompt.toUpperCase(),
             style: context.typography.bodySmall.withColor(
               context.colors.onSurfaceVariant,
             ),
             textAlign: TextAlign.center,
           ),
           Text(
-            "What fun conversation did you have today?",
+            context.t.homeDailyPrompt.question,
             style: context.typography.h3,
             textAlign: TextAlign.center,
           ),
@@ -32,7 +33,7 @@ class HomeDailyPrompt extends StatelessWidget {
             child: FilledButton.icon(
               onPressed: () {},
               icon: Icon(Symbols.edit),
-              label: Text("Answer"),
+              label: Text(context.t.homeDailyPrompt.answer),
               style: context.buttonStyles.mediumGhost,
             ),
           ),

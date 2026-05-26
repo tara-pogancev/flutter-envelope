@@ -1,3 +1,4 @@
+import 'package:envelope/core/i18n/strings.g.dart';
 import 'package:envelope/core/theming/sizes.dart';
 import 'package:envelope/core/theming/theming_context_extensions.dart';
 import 'package:envelope/core/widgets/grainy_page_container.dart';
@@ -30,21 +31,21 @@ class HomePage extends StatelessWidget {
               HomeHeader(),
               Sizes.m.spacer,
               Text(
-                "Hi, let's write about today. 🖋️",
+                context.t.homePage.pageTitle,
                 textAlign: TextAlign.start,
                 style: context.typography.h1,
               ),
               Sizes.s.spacer,
               FilledButton.icon(
                 onPressed: () {},
-                label: Text("Journal entry"),
+                label: Text(context.t.homePage.journalEntry),
                 icon: Icon(Symbols.add),
                 style: context.buttonStyles.largeDarkGray,
               ),
               HomeDailyPrompt(),
               Sizes.l.spacer,
               Text(
-                "Daily streak",
+                context.t.homePage.dailyStreak,
                 style: context.typography.h4,
                 textAlign: TextAlign.start,
               ),
@@ -65,33 +66,30 @@ class HomePage extends StatelessWidget {
               ),
               Sizes.l.spacer,
               Text(
-                "Why journal?",
+                context.t.homePage.whyJournal,
                 style: context.typography.h4,
                 textAlign: TextAlign.start,
               ),
               Sizes.s.spacer,
               HomeInfoCard(
-                title: "Remembering life",
-                subtitle:
-                    "Each day has something to be remembered by. Even if only in a sentence, make sure your everyday moments stay remembered.",
+                title: context.t.homePage.rememberingLifeTitle,
+                subtitle: context.t.homePage.rememberingLifeSubtitle,
                 icon: Symbols.mood,
                 shape: Shapes.flower,
                 shapeColor: context.colors.secondary,
                 iconColor: context.colors.onSecondary,
               ),
               HomeInfoCard(
-                title: "Self-reflection",
-                subtitle:
-                    "Putting you thoughts on paper helps you shape the way you think. It highlights your thought patterns, and helps you discover new perspectives.",
+                title: context.t.homePage.selfReflectionTitle,
+                subtitle: context.t.homePage.selfReflectionSubtitle,
                 icon: Symbols.self_improvement_rounded,
                 shape: Shapes.ghostish,
                 shapeColor: context.colors.primary,
                 iconColor: context.colors.onPrimary,
               ),
               HomeInfoCard(
-                title: "Creativity",
-                subtitle:
-                    "Getting into a habit of writing can feel difficult. But the more you write, the easier you will find exploration of new ideas and concepts reaching you. Creativity is a skill to be practiced as well, and journaling is a simple way to get you started.",
+                title: context.t.homePage.creativityTitle,
+                subtitle: context.t.homePage.creativitySubtitle,
                 icon: Symbols.palette,
                 shape: Shapes.c9_sided_cookie,
                 shapeColor: context.colors.tertiary,

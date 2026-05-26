@@ -1,3 +1,5 @@
+import 'package:envelope/core/extensions/date_formatting_extensions.dart';
+import 'package:envelope/core/i18n/strings.g.dart';
 import 'package:envelope/core/theming/envelope_ui.dart';
 
 class HomeHeader extends StatelessWidget {
@@ -19,7 +21,13 @@ class HomeHeader extends StatelessWidget {
             children: [
               Icon(Symbols.event, weight: 400),
               Sizes.s.spacer,
-              Text("Thu 21 May, 2026", style: context.typography.body),
+              Text(
+                context.t.homeHeader.date.replaceAll(
+                  '{date}',
+                  DateTime.now().longFormatted,
+                ),
+                style: context.typography.body,
+              ),
             ],
           ),
         ),

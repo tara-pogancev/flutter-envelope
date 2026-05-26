@@ -8,6 +8,8 @@ extension ThemingContextExtensions on BuildContext {
   AppTypography get typography => AppTypography()..context = this;
   AppBoxDecorations get boxDecorations => AppBoxDecorations()..context = this;
   AppButtonStyles get buttonStyles => AppButtonStyles()..context = this;
+
+  bool get isDarkMode => colors.brightness == Brightness.dark;
 }
 
 extension TextStyleX on TextStyle {
