@@ -4,7 +4,7 @@ import 'package:envelope/core/widgets/grainy_page_container.dart';
 import 'package:envelope/core/widgets/home_info_card.dart';
 import 'package:envelope/features/home/widgets/daily_streak_card.dart';
 import 'package:envelope/features/home/widgets/home_daily_question_prompt.dart';
-import 'package:envelope/gen/assets.gen.dart';
+import 'package:envelope/features/home/widgets/home_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_m3shapes/flutter_m3shapes.dart';
 import 'package:material_symbols_icons/symbols.dart';
@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: Sizes.xs.value,
             children: [
-              _HomeHeader(),
+              HomeHeader(),
               Sizes.m.spacer,
               Text(
                 "Hi, let's write about today. 🖋️",
@@ -71,26 +71,29 @@ class HomePage extends StatelessWidget {
               ),
               Sizes.s.spacer,
               HomeInfoCard(
-                title: "Mental health",
-                subtitle: "Journaling can help you manage stress and anxiety.",
+                title: "Remembering life",
+                subtitle:
+                    "Each day has something to be remembered by. Even if only in a sentence, make sure your everyday moments stay remembered.",
                 icon: Symbols.mood,
                 shape: Shapes.flower,
-              ),
-              HomeInfoCard(
-                title: "Self-reflection",
-                subtitle:
-                    "Journaling can help you reflect on your thoughts and feelings.",
-                icon: Symbols.self_improvement,
-                shape: Shapes.slanted,
                 shapeColor: context.colors.secondary,
                 iconColor: context.colors.onSecondary,
               ),
               HomeInfoCard(
+                title: "Self-reflection",
+                subtitle:
+                    "Putting you thoughts on paper helps you shape the way you think. It highlights your thought patterns, and helps you discover new perspectives.",
+                icon: Symbols.self_improvement_rounded,
+                shape: Shapes.ghostish,
+                shapeColor: context.colors.primary,
+                iconColor: context.colors.onPrimary,
+              ),
+              HomeInfoCard(
                 title: "Creativity",
                 subtitle:
-                    "Journaling can help you boost your creativity and problem-solving skills.",
-                icon: Symbols.light_mode,
-                shape: Shapes.c6_sided_cookie,
+                    "Getting into a habit of writing can feel difficult. But the more you write, the easier you will find exploration of new ideas and concepts reaching you. Creativity is a skill to be practiced as well, and journaling is a simple way to get you started.",
+                icon: Symbols.palette,
+                shape: Shapes.c9_sided_cookie,
                 shapeColor: context.colors.tertiary,
                 iconColor: context.colors.onTertiary,
               ),
@@ -98,41 +101,6 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class _HomeHeader extends StatelessWidget {
-  const _HomeHeader();
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      spacing: Sizes.s.value,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          decoration: context.boxDecorations.whiteChipLowOpacity,
-          padding: EdgeInsets.symmetric(
-            horizontal: Sizes.m.value,
-            vertical: Sizes.xs.value,
-          ),
-          child: Row(
-            children: [
-              Icon(Symbols.event, weight: 400),
-              Sizes.s.spacer,
-              Text("Thu 21 May, 2026", style: context.typography.body),
-            ],
-          ),
-        ),
-
-        Spacer(),
-        CircleAvatar(
-          foregroundImage: AssetImage(
-            Assets.images.profileImagePlaceholder.path,
-          ),
-        ),
-      ],
     );
   }
 }

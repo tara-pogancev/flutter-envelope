@@ -1,6 +1,6 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:envelope/core/theming/app_material_theme.dart';
-import 'package:envelope/core/widgets/theme_preview.dart';
+import 'package:envelope/features/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +23,7 @@ class MainApp extends StatelessWidget {
               colorScheme: darkDynamic,
               brightness: Brightness.dark,
             ),
-            home: ThemePreview(),
+            home: HomePage(),
           ),
     );
   }

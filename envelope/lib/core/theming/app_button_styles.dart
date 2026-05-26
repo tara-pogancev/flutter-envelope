@@ -50,7 +50,7 @@ class AppButtonStyles {
   );
 
   ButtonStyle get mediumGhost => FilledButton.styleFrom(
-    backgroundColor: context.colors.surfaceContainerHighest,
+    backgroundColor: context.colors.onSurfaceVariant.withAlpha(20),
     foregroundColor: context.colors.onSurface,
     iconSize: _mediumIconSize,
     minimumSize: Size.fromHeight(_mediumHeight),

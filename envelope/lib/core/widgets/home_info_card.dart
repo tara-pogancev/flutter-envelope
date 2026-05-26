@@ -53,7 +53,7 @@ class HomeInfoCard extends StatelessWidget {
                 Text(
                   subtitle,
                   style: context.typography.bodySmall.withColor(
-                    context.colors.outlineVariant,
+                    context.colors.onSurface.withAlpha(140),
                   ),
                 ),
               ],
