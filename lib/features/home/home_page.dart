@@ -1,4 +1,5 @@
 import 'package:envelope/core/i18n/strings.g.dart';
+import 'package:envelope/core/router.dart';
 import 'package:envelope/core/theming/sizes.dart';
 import 'package:envelope/core/theming/theming_context_extensions.dart';
 import 'package:envelope/core/widgets/grainy_page_container.dart';
@@ -8,6 +9,7 @@ import 'package:envelope/features/home/widgets/home_daily_question_prompt.dart';
 import 'package:envelope/features/home/widgets/home_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_m3shapes/flutter_m3shapes.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,7 +19,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => context.push(Routes.entry.path),
         child: Icon(Symbols.book),
       ),
       body: GrainyPageContainer(
@@ -37,7 +39,7 @@ class HomePage extends StatelessWidget {
               ),
               Sizes.s.spacer,
               FilledButton.icon(
-                onPressed: () {},
+                onPressed: () => context.push(Routes.entry.path),
                 label: Text(context.t.homePage.journalEntry),
                 icon: Icon(Symbols.add),
                 style: context.buttonStyles.largeDarkGray,

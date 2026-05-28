@@ -1,5 +1,3 @@
-import 'package:envelope/core/i18n/strings.g.dart';
-import 'package:envelope/core/theming/theming_context_extensions.dart';
 import 'package:flutter/material.dart';
 
 class ThemePreview extends StatelessWidget {
@@ -7,7 +5,7 @@ class ThemePreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final c = context.colors;
+    final c = Theme.of(context).colorScheme;
 
     final pairs = [
       _ColorPair('primary', c.primary, 'onPrimary', c.onPrimary),
@@ -198,7 +196,7 @@ class ThemePreview extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(title: Text(context.t.themePreview.title)),
+      appBar: AppBar(title: Text("Theme Colors Preview")),
       body: SafeArea(
         child: ListView.builder(
           itemCount: pairs.length,
