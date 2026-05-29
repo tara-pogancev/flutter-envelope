@@ -97,6 +97,10 @@ class HomePage extends StatelessWidget {
                 shapeColor: context.colors.tertiary,
                 iconColor: context.colors.onTertiary,
               ),
+              ElevatedButton(
+                onPressed: () => context.push(Routes.themePreview.path),
+                child: Text("Theme Preview"),
+              ),
             ],
           ),
         ),

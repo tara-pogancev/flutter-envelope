@@ -1,3 +1,4 @@
+import 'package:envelope/core/widgets/theme_preview.dart';
 import 'package:envelope/features/entry/entry_page.dart';
 import 'package:envelope/features/entry/new_entry_page.dart';
 import 'package:envelope/features/home/home_page.dart';
@@ -6,7 +7,8 @@ import 'package:go_router/go_router.dart';
 enum Routes {
   home('/'),
   entry('/entry'),
-  newEntry('/entry/new');
+  newEntry('/entry/new'),
+  themePreview('/debug/theme-preview');
 
   final String path;
   const Routes(this.path);
@@ -26,6 +28,10 @@ final appRouter = GoRouter(
     GoRoute(
       path: Routes.newEntry.path,
       builder: (context, state) => const NewEntryPage(),
+    ),
+    GoRoute(
+      path: Routes.themePreview.path,
+      builder: (context, state) => const ThemePreview(),
     ),
   ],
 );
